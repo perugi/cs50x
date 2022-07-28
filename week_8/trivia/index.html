@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // TODO: Add code to check answers to questions
+        function checkChoiceAnswerEvent(event) {
+            var correctAnswer = "Ukraine"
+
+            // Reset all the buttons to original colour.
+            var answerButtons = document.querySelectorAll("button.choiceButton");
+            answerButtons.forEach(function (button) {
+                button.style.background = '#d9edff';
+            });
+
+            // Check if correct answer and color the button.
+            var triggerObject = event.srcElement;
+            if (triggerObject.innerHTML == correctAnswer) {
+                document.querySelector("#displayChoiceAnswer").innerHTML = "Correct!";
+                triggerObject.style.background = 'green';
+            }
+            else {
+                document.querySelector("#displayChoiceAnswer").innerHTML = "Incorrect";
+                triggerObject.style.background = 'red';
+            }
+        }
+
+        function checkFreeAnswerEvent(event) {
+            var correctAnswer = "stefania";
+
+            if (document.querySelector("#inputField").value.toLowerCase() == correctAnswer) {
+                document.querySelector("#displayFreeAnswer").innerHTML = "Correct!";
+                document.querySelector("#inputField").style.background = 'green';
+            }
+            else {
+                document.querySelector("#displayFreeAnswer").innerHTML = "Incorrect";
+                document.querySelector("#inputField").style.background = 'red';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <p>Who was the winner of Eurovision 2022?</p>
+            <button class="choiceButton" onclick="checkChoiceAnswerEvent(event);">Sweden</button>
+            <button class="choiceButton" onclick="checkChoiceAnswerEvent(event);">Croatia</button>
+            <button class="choiceButton" onclick="checkChoiceAnswerEvent(event);">Ukraine</button>
+            <p id="displayChoiceAnswer"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <p>What was the title of the winning song?</p>
+            <input id="inputField" type="text" />
+            <button onclick="checkFreeAnswerEvent(event);">Check Answer</button>
+            <p id="displayFreeAnswer"></p>
+        </div>
+    </div>
+</body>
+
+</html>

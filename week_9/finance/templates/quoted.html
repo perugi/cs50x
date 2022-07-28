@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quote
+{% endblock %}
+
+{% block main %}
+<form action="/quote" method="post">
+    <div class="input-group">
+        <input autocomplete="off" autofocus class="form-control" id="symbol" name="symbol" placeholder="Stock symbol"
+            type="text">
+        <button class="btn btn-primary" type="submit">Get Quote</button>
+    </div>
+    <p></p>
+    <p>
+        {{ quote.name }} ({{ quote.symbol}}): {{ quote.price | usd }}
+    </p>
+</form>
+{% endblock %}

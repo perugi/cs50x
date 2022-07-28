@@ -1,0 +1,11 @@
+sort1 uses: bubble
+
+How do you know?: The pre-sorted list was a lot faster than random = Omega(n)
+
+sort2 uses: merge
+
+How do you know?: The sorting of random files was the fastest of the three = O(n*logn)
+
+sort3 uses: selection
+
+How do you know?: Slightly faster than bubble on large dataset, sorting pre-sorted list takes the same amount of time as random = Theta(n^2)
