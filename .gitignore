@@ -1,6 +1,6 @@
 # Ignore the API key, used in the finances project of week_9
+week_9/finance/plannter.db
 week_9/finance/api_key.txt
-week_9/finance/finance.db
 week_9/finance/flask_session/
 
 
